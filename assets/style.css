@@ -91,6 +91,7 @@ main{padding:1rem 0 3rem}
 .prose p{margin:0 0 1.05rem}
 .lead{font-size:1.18rem;color:var(--ink)}
 .note{font-size:.95rem;color:var(--muted)}
+.profile-links{font-size:.95rem;font-weight:400;margin:-.3rem 0 .4rem}
 .links-row{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem}
 .btn{
   display:inline-block;background:var(--accent);color:#fff;font-weight:400;
