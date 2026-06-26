@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://climatejain.github.io/sitemap.xml
