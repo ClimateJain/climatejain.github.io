@@ -123,16 +123,35 @@ ol.publist .pub::before{
 .contact-grid p{margin:0}
 @media(max-width:600px){.contact-grid{grid-template-columns:1fr}}
 
-/* about: career-timeline banner */
-.timeline-banner{
-  max-width:1100px;margin:1.6rem auto .4rem;padding:0 1.5rem;
+/* about: native CSS career timeline */
+.cv-timeline{list-style:none;margin:1rem 0 0;padding:0}
+.cv-item{
+  position:relative;display:grid;
+  grid-template-columns:108px 28px 1fr;align-items:start;
+  padding-bottom:1.5rem;
 }
-.timeline-banner img{
-  width:100%;border:1px solid var(--line);border-radius:10px;
-  box-shadow:0 2px 12px rgba(0,0,0,.06);background:#fff;
+.cv-item:last-child{padding-bottom:0}
+.cv-year{
+  font-size:.82rem;font-weight:500;color:var(--accent-dark);
+  text-align:right;padding-top:1px;letter-spacing:.01em;white-space:nowrap;
 }
-.timeline-banner figcaption{
-  text-align:center;font-size:.85rem;color:var(--muted);margin-top:.5rem;
+.cv-marker{position:relative;justify-self:center;width:100%;height:100%}
+.cv-marker::before{   /* the dot */
+  content:"";position:absolute;left:50%;top:6px;transform:translateX(-50%);
+  width:13px;height:13px;border-radius:50%;
+  background:var(--accent);box-shadow:0 0 0 4px rgba(47,111,143,.15);z-index:2;
+}
+.cv-marker::after{    /* the connecting line */
+  content:"";position:absolute;left:50%;top:6px;transform:translateX(-50%);
+  width:2px;height:calc(100% + 1.5rem);background:var(--line);z-index:1;
+}
+.cv-item:last-child .cv-marker::after{display:none}
+.cv-body{padding-top:0}
+.cv-role{display:block;font-weight:500;color:var(--ink)}
+.cv-place{display:block;font-size:.93rem;color:var(--muted);margin-top:.1rem}
+@media(max-width:560px){
+  .cv-item{grid-template-columns:84px 22px 1fr}
+  .cv-year{font-size:.76rem}
 }
 
 /* about: embedded travel map */
